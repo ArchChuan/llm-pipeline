@@ -1,0 +1,23 @@
+# 基础
+torch>=2.0
+transformers>=4.35
+datasets>=2.14
+accelerate>=0.24
+peft>=0.6
+bitsandbytes>=0.41
+
+# API
+fastapi
+uvicorn[standard]
+gunicorn
+
+# 模型下载
+modelscope
+
+# 推理加速
+vllm
+flash-attn
+
+# 工具
+pyyaml
+pydantic

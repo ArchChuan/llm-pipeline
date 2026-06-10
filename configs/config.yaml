@@ -1,0 +1,13 @@
+# 服务配置
+HOST: 0.0.0.0
+API_PORT: 8000
+VLLM_PORT: 8001
+
+# 模型配置
+MODEL_NAME: qwen/Qwen-7B-Chat
+MODEL_PATH: ./models/qwen/Qwen-7B-Chat
+
+# 微调配置
+DATA_PATH: ./data/train_data.json
+LORA_OUTPUT: ./lora_weights
+EPOCHS: 3
