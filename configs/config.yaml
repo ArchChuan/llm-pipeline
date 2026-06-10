@@ -7,6 +7,12 @@ VLLM_PORT: 8001
 MODEL_NAME: qwen/Qwen-7B-Chat
 MODEL_PATH: ./models/qwen/Qwen-7B-Chat
 
+# 量化配置
+QUANT_BITS: 0                                        # 0=不量化, 4=INT4, 8=INT8
+QUANT_MODEL_PATH: ./models/qwen/Qwen-7B-Chat-GPTQ-int4
+QUANT_DATASET: ./data/train_data.json
+QUANT_SAMPLES: 128
+
 # 微调配置
 DATA_PATH: ./data/train_data.json
 LORA_OUTPUT: ./lora_weights

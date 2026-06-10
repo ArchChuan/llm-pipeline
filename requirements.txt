@@ -21,3 +21,7 @@ flash-attn
 # 工具
 pyyaml
 pydantic
+
+# 量化
+auto-gptq>=0.7
+optimum>=1.16
