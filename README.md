@@ -101,6 +101,9 @@ MODEL_PATH: ./models/qwen/Qwen-7B-Chat
 DATA_PATH: ./data/train_data.json
 LORA_OUTPUT: ./lora_weights
 EPOCHS: 3
+QUANT_BITS: 0              # 量化精度：0=不量化, 4=INT4, 8=INT8
+QUANT_MODEL_PATH: ./models/qwen/Qwen-7B-Chat-GPTQ-int4
+QUANT_SAMPLES: 128         # 量化校准样本数
 HOST: 0.0.0.0
 API_PORT: 8000
 VLLM_PORT: 8001
@@ -134,5 +137,6 @@ make install    # 安装依赖
 make serve      # 启动基础 API（端口 8000）
 make vllm       # 启动 vLLM API（端口 8001）
 make finetune   # 启动 LoRA 微调
+make quantize   # GPTQ 量化（INT4/INT8，约 10-30 分钟）
 make clean      # 清理日志
 ```
