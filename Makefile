@@ -27,6 +27,11 @@ finetune:
 	@echo "=== 开始LoRA微调 ==="
 	python scripts/finetune.py
 
+# 模型量化
+quantize:
+	@echo "=== 开始 GPTQ 量化 ==="
+	python scripts/quantize.py
+
 # 查看日志
 logs:
 	tail -f logs/api.log
