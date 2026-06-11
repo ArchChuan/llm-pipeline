@@ -1,5 +1,5 @@
 # 服务配置
-HOST: 0.0.0.0
+HOST: 127.0.0.1
 API_PORT: 8000
 VLLM_PORT: 8001
 

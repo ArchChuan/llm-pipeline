@@ -16,7 +16,7 @@ modelscope
 
 # 推理加速
 vllm
-flash-attn
+# flash-attn requires GPU + pre-installed torch; install manually: pip install flash-attn --no-build-isolation
 
 # 工具
 pyyaml
