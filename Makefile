@@ -44,3 +44,29 @@ stop:
 # 清理日志
 clean:
 	rm -rf logs/*
+
+# ── 测试 ──────────────────────────────────────────────────────
+# 性能测试
+bench-latency:
+	python tests/perf/latency_benchmark.py --url http://$(HOST):$(API_PORT)
+
+bench-stress:
+	python tests/perf/stress_test.py --url http://$(HOST):$(API_PORT) --concurrency 10 --total 100
+
+bench-throughput:
+	python tests/perf/throughput_test.py --url http://$(HOST):$(API_PORT)
+
+# 准确率测试
+eval:
+	python tests/accuracy/eval_chat.py --url http://$(HOST):$(API_PORT)
+
+eval-consistency:
+	python tests/accuracy/consistency_test.py --url http://$(HOST):$(API_PORT)
+
+# 量化前后对比（需要服务已停止，脚本会自动启停）
+compare-quant:
+	bash tests/compare_quant.sh
+
+# 跑全部单元测试
+test:
+	python -m pytest tests/ -v --ignore=tests/perf --ignore=tests/accuracy

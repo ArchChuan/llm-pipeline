@@ -22,6 +22,10 @@ flash-attn
 pyyaml
 pydantic
 
+# 测试
+httpx
+pytest
+
 # 量化
 auto-gptq>=0.7
 optimum>=1.16
